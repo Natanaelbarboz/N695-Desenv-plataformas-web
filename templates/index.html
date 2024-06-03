@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+      <div id="DS">
+        <h1>Bem-vindo ao Blog do DS</h1>
+      </div>
+      <div id="menu">
+        {% if 'user' in session %}
+          <a href="/usuarios">Usuários Cadastrados</a> | <a href="/logout">Logout</a>
+        {% else %}
+            <a href="/cadastro">Cadastro</a> | <a href="/login">Login</a> | <a href="/contatos">Contatos</a>
+        {% endif %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <ul>
+              {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+    </header>
+    <aside>
+      <div id = title>
+        <h1>
+            O Desenvolvimento Web
+        </h1>
+      </div>
+      <div class="content">
+        <div id="text">
+          <p>
+            O desenvolvimento web teve origem nos anos 1990, com a criação da World Wide Web por Tim Berners-Lee. Inicialmente, as páginas eram estáticas, compostas principalmente de texto e imagens simples. Com o tempo, a demanda por interatividade e dinamismo levou ao surgimento de linguagens de programação como JavaScript, que permitiam aos desenvolvedores criar páginas web mais interativas e dinâmicas.
+          
+          <br>
+              A introdução do HTML (Hypertext Markup Language) e do CSS (Cascading Style Sheets) possibilitou uma melhor estruturação e apresentação das páginas web, respectivamente. Isso permitiu uma maior separação entre conteúdo e estilo, facilitando a manutenção e o desenvolvimento de sites mais complexos.
+          
+          <br>
+              Com o avanço da tecnologia, surgiram frameworks e bibliotecas como jQuery, AngularJS, React e Vue.js, que simplificaram e aceleraram o processo de desenvolvimento web, permitindo a criação de interfaces mais sofisticadas e responsivas.
+          <br>
+              Além disso, o surgimento de linguagens de programação no lado do servidor, como PHP, Python, Ruby e Node.js, possibilitou o desenvolvimento de aplicações web mais robustas e escaláveis, permitindo a interação com bancos de dados e o processamento de dados do usuário de forma mais eficiente.
+          <br>
+              Nos últimos anos, o desenvolvimento web tem sido impulsionado pela adoção de tecnologias como Progressive Web Apps (PWAs), que oferecem uma experiência semelhante a aplicativos nativos em dispositivos móveis, e pela crescente demanda por websites responsivos, que se adaptam a diferentes dispositivos e tamanhos de tela.
+          <br>
+              A criação e desenvolvimento da web evoluíram ao longo do tempo, impulsionados pela demanda por interatividade, dinamismo e uma melhor experiência do usuário, resultando em uma ampla variedade de tecnologias e ferramentas disponíveis para os desenvolvedores web.
+          </p>
+        </div>
+        <div id="imagem">
+          <img src="{{ url_for('static', filename='img/tim-berners-lee.jpg') }}" alt="tim-berners-lee">
+        </div>
+      </div>
+    </aside>
+</body>
+</html>
+
+
+

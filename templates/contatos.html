@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contatos</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="contato">
+            <img src="{{ url_for('static', filename='img/foto1.jpg') }}" alt="Foto 1">
+            <div class="info">
+                <h2>Natanael</h2>
+                <p>Estudante de análise e desenvolvimento de sistema pela Universidade de Fortaleza(Unifor).<br>
+                    Analista de dados na Hapvida Notredamen Intermédfica<br>
+                    Principais tecnologias: Python, SQL, C#.<br>
+                    <a href="https://www.linkedin.com/in/natanael-barboza/">linkedin</a>
+                </p>
+            </div>
+        </div>
+        <div class="contato">
+            <img src="{{ url_for('static', filename='img/foto2.jpg') }}" alt="Foto 2">
+            <div class="info">
+                <h2>Gabriel</h2>
+                <p>Estudante de análise e desenvolvimento de sistema pela Universidade de Fortaleza(Unifor).<br>
+                    Analista de Suporte Nível II na Lanlink Informática<br>
+                    Principais tecnologias: Java.<br>
+                    <a href="https://www.linkedin.com/in/gabriel-barboza-lima-723042186/">linkedin</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
